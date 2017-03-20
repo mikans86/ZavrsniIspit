@@ -103,7 +103,7 @@ public class SecondActivity extends AppCompatActivity {
 
         }
 
-        addInitCateogry();
+
 
     }
 
@@ -162,22 +162,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
-    private void addInitCateogry(){
-        try {
-            if (getDatabaseHelper().getBrojeviDao().queryForAll().size() == 0){
-                Brojevi kucni = new Brojevi();
-                kucni.setBTip("Kucni");
-
-                Brojevi mobilni = new Brojevi();
-                mobilni.setBTip("mobilni");
-
-                getDatabaseHelper().getBrojeviDao().create(kucni);
-                getDatabaseHelper().getBrojeviDao().create(mobilni);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+ 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
