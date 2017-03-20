@@ -6,4 +6,5 @@
     <string name="dialog_about_message">This is Example18 app which demonstrates usage of toasts, notifications, dialogs, preferences, toolbars and navigation drawers</string>
     <string name="dialog_about_yes">OK</string>
     <string name="dialog_about_no">Cancel</string>
+    <string name="dodaj_broj">Dodaj Broj</string>
 </resources>
