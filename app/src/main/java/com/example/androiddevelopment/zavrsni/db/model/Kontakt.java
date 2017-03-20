@@ -15,6 +15,7 @@ public class Kontakt {
     public static final String FIELD_NAME_IME = "ime";
     public static final String FIELD_NAME_PREZIME = "prezime";
     public static final String FIELD_NAME_ADRESA = "adresa";
+    public static final String FIELD_NAME_SLIKA = "slika";
     public static final String FIELD_NAME_BROJEVI = "brojevi";
 
     @DatabaseField(columnName = FIELD_NAME_ID, generatedId = true)
@@ -25,6 +26,9 @@ public class Kontakt {
 
     @DatabaseField(columnName = FIELD_NAME_PREZIME)
     private String mPrezime;
+
+    @DatabaseField(columnName = FIELD_NAME_SLIKA)
+    private String mSlika;
 
     @DatabaseField(columnName = FIELD_NAME_ADRESA)
     private String mAdresa;
@@ -62,6 +66,14 @@ public class Kontakt {
 
     public String getmAdresa() {
         return mAdresa;
+    }
+
+    public String getmSlika() {
+        return mSlika;
+    }
+
+    public void setmSlika(String mSlika) {
+        this.mSlika = mSlika;
     }
 
     public void setmAdresa(String mAdresa) {
