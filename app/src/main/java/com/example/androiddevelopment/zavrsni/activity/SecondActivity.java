@@ -102,6 +102,9 @@ public class SecondActivity extends AppCompatActivity {
             e.printStackTrace();
 
         }
+
+        addInitCateogry();
+
     }
 
 
@@ -184,28 +187,21 @@ public class SecondActivity extends AppCompatActivity {
                 dialog.setTitle("Dodavanje broja telefona");
                 dialog.setContentView(R.layout.broj_dijalog);
 
-                final Spinner productsSpinner = (Spinner) dialog.findViewById(R.id.vrsta);
-                List<Brojevi> list = null;
-                try {
-                    list = getDatabaseHelper().getBrojeviDao().queryForAll();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                ArrayAdapter<Brojevi> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
-                productsSpinner.setAdapter(dataAdapter);
-                productsSpinner.setSelection(0);
 
-                Button add = (Button) dialog.findViewById(R.id.dodaj_broj);
+                Button add = (Button) dialog.findViewById(R.id.add);
                 add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         EditText broj = (EditText) dialog.findViewById(R.id.broj2);
-                        Brojevi tip = (Brojevi) productsSpinner.getSelectedItem();
+                        EditText tip = (EditText) dialog.findViewById(R.id.tip);
+
 
 
                         Brojevi b = new Brojevi();
                         b.setBBroj(broj.getText().toString());
-                       // b.setBrojevi(tip);
+                        b.setBTip(tip.getText().toString());
+                        b.setBUser(k);
+
 
 
                         try {
@@ -216,7 +212,7 @@ public class SecondActivity extends AppCompatActivity {
                         //URADITI REFRESH
                         refresh();
 
-                        showMessage("New movie added to actor");
+                        showMessage("Novi broj dodat");
 
                         dialog.dismiss();
                     }
